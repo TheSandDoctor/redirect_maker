@@ -50,7 +50,7 @@ def main():
     config = configparser.RawConfigParser()
     config.read('credentials.txt')
     try:
-        pass#site.login(config.get('enwiki_sandbot', 'username'), config.get('enwiki_sandbot', 'password'))
+        site.login(config.get('enwiki_sandbot', 'username'), config.get('enwiki_sandbot', 'password'))
     except errors.LoginError as e:
         print(e)
         raise ValueError("Login failed.")
