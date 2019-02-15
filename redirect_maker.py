@@ -4,30 +4,22 @@ from time import sleep
 from mwclient import errors
 
 
-#def call_home(site):
-   # h_page = site.Pages['User:TheSandBot/status']
-    #text = h_page.text()
-  #  return bool(json.loads(text)["run"]["draft_na_template_remover"])
-
-
 def save_wrap(res):
     site,title = res
     page = site.Pages[title]
     print(str(page.page_title))
-    if not page.exists:
-         save_edit(page, site, "#REDIRECT [[User:RhinosF1]]")
+    #if not page.exists: ##NOT IN USE##
+         #save_edit(page, site, "#REDIRECT [[User:RhinosF1]]")
     else:
-        print("EXISTS " + str(page.page_title)) #change to input()
-        #if 'Y':
-           #save_edit...
-        #else:
-           #print('Change Refused')
+        input("EXISTS " + str(page.page_title))
+        if 'Y':
+           save_edit(page, site, "#REDIRECT [[
+        else:
+           print('Change Refused')
 
 
-def save_edit(page, site, text):
-    #if not call_home(site):
-       # raise ValueError("Kill switch on-wiki is false. Terminating program.")
-    edit_summary = """Create userspace redirect."""
+def save_edit(page, site, text)
+    edit_summary = """Create userspace redirect. (BOT)"""
     time = 0
     while True:
         if time > 1:
